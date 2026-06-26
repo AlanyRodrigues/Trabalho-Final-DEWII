@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title><?= $title ?? 'SkyTicket' ?></title>
+    <title><?= $title ?? 'PrimeVoos' ?></title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,11 @@
 
 <body>
 
+<?= $this->include('components/navbar') ?>
+
 <?= $this->renderSection('content') ?>
+
+<?= $this->include('components/footer') ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
