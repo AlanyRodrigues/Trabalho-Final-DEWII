@@ -14,7 +14,7 @@ class VooModel extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['origem', 'destino', 'assentos_disponiveis'];
+    protected $allowedFields = ['numero_voos', 'origem', 'destino', 'data_partida', 'data_chegada', 'preco', 'assentos_disponiveis'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
