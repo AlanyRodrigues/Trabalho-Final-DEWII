@@ -12,7 +12,7 @@ class UsuarioModel extends Model
     protected $useAutoIncrement = true;
     
     protected $returnType = 'array';
-    protected $allowedFields = ['nome', 'email'];
+    protected $allowedFields = ['nome', 'email', 'senha'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
