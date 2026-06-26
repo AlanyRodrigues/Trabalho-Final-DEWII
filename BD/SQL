@@ -1,1 +1,89 @@
 // colocar o sql aqui
+
+// colocar o sql aqui
+
+create database sistema_passagens;
+use sistema_passagens;
+
+CREATE TABLE usuarios(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	nome VARCHAR(100) NOT NULL,	
+	email VARCHAR(100) NOT NULL,
+	senha VARCHAR(200) not null,
+	token_recuperacao VARCHAR(200) NOT NULL
+);
+
+CREATE TABLE passageiros(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	usuario_id INT NOT NULL,
+	nome_completo VARCHAR(100) NOT NULL,
+	documento_cpf VARCHAR(14) NOT NULL,
+	data_nascimento DATE NOT NULL,
+	FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);
+
+CREATE TABLE voos(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	numero_voos VARCHAR(10) NOT NULL,
+	origem VARCHAR(50) NOT NULL,
+	destino VARCHAR(50) NOT NULL,
+	data_partida DATETIME NOT NULL,
+	data_chegada  datetime not null,
+	preco decimal not null,
+	assentos_disponiveis int not null
+);
+
+CREATE TABLE reservas(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT NOT NULL,
+    passageiro_id INT NOT NULL,
+    voo_id INT NOT NULL,
+    assento_id VARCHAR(5) NOT NULL,
+    codigo_localizador VARCHAR(8) NOT NULL UNIQUE,
+    status VARCHAR(20) DEFAULT 'confirmado',
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id),     
+    FOREIGN KEY (passageiro_id) REFERENCES passageiros(id),
+    FOREIGN KEY (voo_id) REFERENCES voos(id)               
+);
+
+
+
+USE sistema_passagens;
+
+-- 1. Populando a tabela de USUÁRIOS (Quem faz o login no sistema)
+-- As senhas e tokens são exemplos fictícios (geralmente seriam hashes)
+INSERT INTO usuarios (nome, email, senha, token_recuperacao) VALUES
+('Carlos Silva', 'carlos.silva@email.com', 'senhaCriptografada123', 'tok_abc123xyz'),
+('Ana Beatriz Souza', 'ana.souza@email.com', 'senhaSegura456', 'tok_def456uvw'),
+('Marcos Oliveira', 'marcos.oli@email.com', 'marcos@2026', 'tok_ghi789rst'),
+('Mariana Costa', 'mari.costa@email.com', 'mariana#987', 'tok_jkl012opq');
+
+
+-- 2. Populando a tabela de PASSAGEIROS (Quem vai viajar de fato)
+INSERT INTO passageiros (usuario_id, nome_completo, documento_cpf, data_nascimento) VALUES
+(1, 'Carlos Silva', '111.222.333-44', '1988-05-12'),       -- O próprio usuário 1
+(1, 'Julia Silva', '222.333.444-55', '2015-08-20'),         -- Filha/Dependente do usuário 1
+(2, 'Ana Beatriz Souza', '333.444.555-66', '1995-11-02'),   -- O próprio usuário 2
+(3, 'Marcos Oliveira', '444.555.666-77', '1982-03-25'),     -- O próprio usuário 3
+(4, 'Mariana Costa', '555.666.777-88', '1991-07-14'),       -- O próprio usuário 4
+(4, 'Roberto Costa', '666.777.888-99', '1965-01-30');       -- Pai/Dependente do usuário 4
+
+
+-- 3. Populando a tabela de VOOS
+-- Nota: datas e horários coerentes de partida e chegada
+INSERT INTO voos (numero_voos, origem, destino, data_partida, data_chegada, preco, assentos_disponiveis) VALUES
+('G3-1234', 'São Paulo (GRU)', 'Rio de Janeiro (GIG)', '2026-08-10 08:30:00', '2026-08-10 09:45:00', 350.00, 120),
+('AD-4321', 'Belo Horizonte (CNF)', 'Brasília (BSB)', '2026-08-12 14:15:00', '2026-08-12 15:40:00', 420.50, 85),
+('LA-9876', 'São Paulo (CGH)', 'Salvador (SSA)', '2026-08-15 21:00:00', '2026-08-16 00:15:00', 680.00, 150),
+('G3-5555', 'Curitiba (CWB)', 'Porto Alegre (POA)', '2026-08-20 11:00:00', '2026-08-20 12:10:00', 290.99, 40);
+
+
+-- 4. Populando a tabela de RESERVAS
+-- Vinculando corretamente quem comprou (usuario_id), quem viaja (passageiro_id) e o voo (voo_id)
+INSERT INTO reservas (usuario_id, passageiro_id, voo_id, assento_id, codigo_localizador, status) VALUES
+(1, 1, 1, '12A', 'LOCX78A1', 'confirmado'), -- Carlos Silva viajando no voo de RJ
+(1, 2, 1, '12B', 'LOCX78A2', 'confirmado'), -- Julia Silva (dependente do Carlos) no mesmo voo, assento ao lado
+(2, 3, 2, '05C', 'LOCY34B9', 'confirmado'), -- Ana Beatriz no voo de Brasília
+(3, 4, 3, '22F', 'LOCZ90C4', 'cancelado'),  -- Marcos Oliveira fez uma reserva para Salvador, mas cancelou
+(4, 5, 4, '02A', 'LOCW12D5', 'confirmado'), -- Mariana Costa no voo de Porto Alegre
+(4, 6, 4, '02B', 'LOCW12D6', 'confirmado'); -- Roberto Costa (dependente da Mariana) no mesmo voo
