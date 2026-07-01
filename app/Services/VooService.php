@@ -14,10 +14,6 @@ class VooService
         $this->vooModel = new VooModel();
     }
 
-    /*
-     * Lista origens únicas
-     */
-
     public function listarOrigens()
     {
 
@@ -83,6 +79,16 @@ class VooService
 
             ->findAll();
 
+    }
+
+    public function calcularDuracao(array $voo): string
+    {
+        $inicio = new DateTime($voo['data_partida']);
+        $fim = new DateTime($voo['data_chegada']);
+
+        $intervalo = $inicio->diff($fim);
+
+        return sprintf('%dh %02dmin', $intervalo->h, $intervalo->i);
     }
 
 }

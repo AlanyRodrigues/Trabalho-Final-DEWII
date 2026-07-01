@@ -2,20 +2,26 @@
 
 namespace App\Controllers;
 
-use App\Services\MunicipioService;
+use App\Services\VooService;
+use CodeIgniter\Exceptions\PageNotFoundException;
 
-class Municipios extends BaseController
+class Passagens extends BaseController
 {
-    public function getByEstado($estadoId) 
+    public function detalhes($id)
     {
-        if (!$this->request->isAJAX()) {
-            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        $vooService = new VooService();
+
+        $voo = $vooService->buscarPorId($id);
+
+        if (!$voo) {
+            throw PageNotFoundException::forPageNotFound();
         }
 
-        $municipioService = new MunicipioService();
-        
-        $r = $municipioService->getMunicipiosByEstado($estadoId);
-        
-        return $this->response->setJSON($r);
+        $dados = [
+            'voo'      => $voo,
+            'duracao'  => $vooService->calcularDuracao($voo)
+        ];
+
+        return view('passagens/detalhes', $dados);
     }
 }

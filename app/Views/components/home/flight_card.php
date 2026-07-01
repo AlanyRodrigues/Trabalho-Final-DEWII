@@ -38,11 +38,9 @@
                 Assentos disponíveis: <?= $voo['assentos_disponiveis'] ?>
             </p>
 
-            <a href="<?= base_url('voos/selecionar/' . $voo['id']) ?>"
-               class="btn btn-primary w-100">
-
-                Selecionar voo
-
+            <a href="<?= base_url('voos/detalhes/' . $voo['id']) ?>"
+                class="btn btn-primary w-100">
+                    Selecionar voo
             </a>
 
         </div>
