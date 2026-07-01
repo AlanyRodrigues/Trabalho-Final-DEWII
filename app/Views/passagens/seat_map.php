@@ -1,22 +1,28 @@
-<div class="card">
+<div class="card shadow-sm">
+
+    <div class="card-header">
+
+        Escolha seu assento
+
+    </div>
 
     <div class="card-body">
 
-        <h5 class="mb-4">
+        <div id="seat-map"
+            data-voo="<?= $voo['id'] ?>"
+            class="d-flex flex-wrap gap-2 justify-content-center">
 
-            Frente da aeronave
+            <div class="text-center">
 
-        </h5>
+                Carregando assentos...
 
-        <div id="seat-map">
-
-            <!-- Ajax carregará os assentos -->
+            </div>
 
         </div>
 
         <hr>
 
-        <div class="mt-4">
+        <div class="mt-3">
 
             <span class="badge bg-success">Livre</span>
 

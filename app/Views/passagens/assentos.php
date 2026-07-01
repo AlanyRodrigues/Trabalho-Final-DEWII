@@ -30,4 +30,8 @@
 
 </div>
 
+<?= $this->section('scripts') ?>
+
+<script src="<?= base_url('js/seat-map.js') ?>"></script>
+
 <?= $this->endSection() ?>
