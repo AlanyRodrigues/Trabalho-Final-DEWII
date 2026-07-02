@@ -17,6 +17,11 @@ class Security extends BaseConfig
      */
     public string $csrfProtection = 'cookie';
 
+<<<<<<< HEAD
+=======
+    public bool $CSRFProtection = true;
+
+>>>>>>> c594659 (views finalizadas e csrf)
     /**
      * --------------------------------------------------------------------------
      * CSRF Token Randomization
@@ -33,7 +38,11 @@ class Security extends BaseConfig
      *
      * Token name for Cross Site Request Forgery protection.
      */
+<<<<<<< HEAD
     public string $tokenName = 'csrf_test_name';
+=======
+    public string $tokenName = 'csrf_token_name';
+>>>>>>> c594659 (views finalizadas e csrf)
 
     /**
      * --------------------------------------------------------------------------
@@ -73,6 +82,11 @@ class Security extends BaseConfig
      */
     public bool $regenerate = true;
 
+<<<<<<< HEAD
+=======
+    public array $excludes = [];
+
+>>>>>>> c594659 (views finalizadas e csrf)
     /**
      * --------------------------------------------------------------------------
      * CSRF Redirect

@@ -1,152 +1,177 @@
 <?php
 
-namespace App\Services;
 
-use App\Models\ReservaModel;
-use App\Models\AssentoModel;
 use App\Models\VooModel;
+use App\Models\PassageiroModel;
 
-class ReservaService {
-    protected $reservaModel;
-    protected $assentoModel;
-    protected $vooModel;
+class ReservaService
+{
+    protected ReservaModel $reservaModel;
+    protected VooModel $vooModel;
+    protected PassageiroModel $passageiroModel;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->reservaModel = new ReservaModel();
-        $this->assentoModel = new AssentoModel();
         $this->vooModel = new VooModel();
+        $this->passageiroModel = new PassageiroModel();
     }
 
-    public function criarReserva(array $dados){
-        try {
-            $assento = $this->assentoModel->find($dados['assento_id']); //busca
+    public function gerarLocalizador(): string
+    {
+        do {
 
-            if (!$assento) {
-                return [
-                    'status' => false,
-                    'mensagem' => 'Assento não encontrado.'
-                ];
-            }
+            $codigo = strtoupper(substr(bin2hex(random_bytes(5)), 0, 8));
 
-            if ($assento['voo_id'] != $dados['voo_id']) { //verifica assento e voo
-                return [
-                    'status' => false,
-                    'mensagem' => 'O assento não pertence a este voo.'
-                ];
-            }
+        } while ($this->reservaModel
+                    ->where('codigo_localizador', $codigo)
+                    ->first());
 
-            if ($assento['ocupado']) { //esta ocupado?
-                return [
-                    'status' => false,
-                    'mensagem' => 'Assento ocupado.'
-                ];
-            }
+        return $codigo;
+    }
 
-            if (!$this->reservaModel->insert($dados)) { // salvar
-                return [
-                    'status' => false,
-                    'mensagem' => 'Erro ao criar reserva.'
-                ];
-            }
+    public function montarResumo(
+        int $vooId,
+        int $passageiroId,
+        string $assento
+    ): array
+    {
+        $voo = $this->vooModel->find($vooId);
 
-            $this->assentoModel->update( //ocupado
-                $dados['assento_id'],
-                ['ocupado' => true]
-            );
-
-            $voo = $this->vooModel->find($dados['voo_id']); //marca como ocupado e diminui o disponivel
-            $this->vooModel->update(
-                $dados['voo_id'],
-                [
-                    'assentos_disponiveis' =>
-                        $voo['assentos_disponiveis'] - 1
-                ]
-            );
-
-            return [
-                'status' => true,
-                'mensagem' => 'Reserva registrada.'
-            ];
-        } catch (\Exception $e) {
-            return [
-                'status' => 'error',
-                'message' => $e->getMessage()
-            ];
+        if (!$voo) {
+            throw new \Exception("Voo não encontrado.");
         }
 
-        //IMPLEMENTAR ESTE CODIDO_LOCALIZADOR
-        /*                AQUI             */
-    }
+        $passageiro = $this->passageiroModel->find($passageiroId);
 
-    public function cancelarReserva($id) {
-        try {
-            $reserva = $this->reservaModel->find($id);
-
-            if (!$reserva) {
-                return [
-                    'status' => false,
-                    'mensagem' => 'Reserva não encontrada.'
-                ];
-            }
-
-            if ($reserva['status'] == 'cancelada') {
-                return [
-                    'status' => false,
-                    'mensagem' => 'A reserva já foi cancelada.'
-                ];
-            }
-
-            $this->reservaModel->update($id, [
-                'status' => 'cancelada'
-            ]);
-
-            $this->assentoModel->update(
-                $reserva['assento_id'],
-                ['ocupado' => false]
-            );
-
-            $voo = $this->vooModel->find($reserva['voo_id']); //disponibiliza e adiciona
-            $this->vooModel->update(
-                $reserva['voo_id'],
-                [
-                    'assentos_disponiveis' =>
-                        $voo['assentos_disponiveis'] + 1
-                ]
-            );
-
-            return [
-                'status' => true,
-                'mensagem' => 'Reserva cancelada.'
-            ];
-        } catch (\Exception $e) {
-            return [
-                'status' => 'error',
-                'message' => $e->getMessage()
-            ];
+        if (!$passageiro) {
+            throw new \Exception("Passageiro não encontrado.");
         }
+
+        return [
+
+            'voo'=>$voo,
+
+            'passageiro'=>$passageiro,
+
+            'assento'=>$assento,
+
+            'duracao'=>$this->calcularDuracao(
+                $voo['data_partida'],
+                $voo['data_chegada']
+            ),
+
+            'valor_total'=>$voo['preco']
+
+        ];
     }
 
-    public function listarReserva(){
-        try {
-            return $this->reservaModel->findAll();
-        } catch (\Exception $e) {
-            return [
-                'status' => 'error',
-                'message' => $e->getMessage()
-            ];
-        }
-        
+    public function calcularDuracao(
+        string $saida,
+        string $chegada
+    ): string
+    {
+        $inicio = new \DateTime($saida);
+
+        $fim = new \DateTime($chegada);
+
+        $intervalo = $inicio->diff($fim);
+
+        return sprintf(
+            '%dh %02dmin',
+            $intervalo->h,
+            $intervalo->i
+        );
     }
 
-    public function buscarReserva($id) { 
-        try {
-            return $this->reservaModel->find($id);
-        } catch (\Exception $e) {
-            return [
-                'status' => 'error',
-                'message' => $e->getMessage()
-            ];
-        }
+    public function reservar(array $dados): int
+    {
+        $dados['codigo_localizador'] = $this->gerarLocalizador();
+
+        $dados['status'] = 'confirmado';
+
+        return $this->reservaModel->insert($dados);
     }
 
+    public function buscarPorCodigo(string $codigo): ?array
+    {
+        return $this->reservaModel
+            ->where('codigo_localizador', $codigo)
+            ->first();
+    }
+
+    public function listarPorUsuario(int $usuarioId): array
+    {
+        return $this->reservaModel
+            ->select('
+                reservas.*,
+                voos.origem,
+                voos.destino,
+                voos.data_partida,
+                voos.preco,
+                passageiros.nome_completo
+            ')
+            ->join(
+                'voos',
+                'voos.id = reservas.voo_id'
+            )
+            ->join(
+                'passageiros',
+                'passageiros.id = reservas.passageiro_id'
+            )
+            ->where(
+                'reservas.usuario_id',
+                $usuarioId
+            )
+            ->orderBy(
+                'voos.data_partida',
+                'ASC'
+            )
+            ->findAll();
+    }
+
+    public function cancelar(int $id): bool
+    {
+        return $this->reservaModel->update($id, [
+
+            'status'=>'cancelado'
+
+        ]);
+    }
+
+    public function totalReservas(int $usuarioId): int
+    {
+        return $this->reservaModel
+            ->where('usuario_id', $usuarioId)
+            ->where('status', 'confirmado')
+            ->countAllResults();
+    }
+
+    public function proximaViagem(int $usuarioId): ?array
+    {
+        return $this->reservaModel
+            ->select('
+                reservas.*,
+                voos.origem,
+                voos.destino,
+                voos.data_partida
+            ')
+            ->join(
+                'voos',
+                'voos.id = reservas.voo_id'
+            )
+            ->where(
+                'reservas.usuario_id',
+                $usuarioId
+            )
+            ->where(
+                'voos.data_partida >=',
+                date('Y-m-d H:i:s')
+            )
+            ->orderBy(
+                'voos.data_partida',
+                'ASC'
+            )
+            ->first();
+    }
 }

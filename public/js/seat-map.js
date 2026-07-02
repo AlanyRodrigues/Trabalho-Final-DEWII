@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const vooId = seatMap.dataset.voo;
 
+    const inputAssento = document.getElementById("assentoSelecionado");
+    const btnContinuar = document.getElementById("btnContinuar");
+
     fetch("/ajax/assentos/" + vooId, {
         headers: {
             "X-Requested-With": "XMLHttpRequest"
@@ -47,15 +50,33 @@ document.addEventListener("DOMContentLoaded", function () {
                     .querySelectorAll(".seat")
                     .forEach(x => {
 
+
                         if (!x.disabled)
                             x.classList.remove("btn-primary");
+
+                        if (!x.disabled) {
+                            x.classList.remove("btn-primary");
+                            x.classList.add("btn-success");
+                        }
 
                     });
 
                 this.classList.remove("btn-success");
 
+
                 this.classList.add("btn-primary");
 
+                this.classList.add("btn-primary");
+
+                // Salva o ID do assento escolhido
+                if (inputAssento) {
+                    inputAssento.value = a.id;
+                }
+
+                // Habilita o botão Continuar
+                if (btnContinuar) {
+                    btnContinuar.disabled = false;
+                }
             });
 
             seatMap.appendChild(btn);

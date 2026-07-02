@@ -30,11 +30,18 @@
 
     <div class="mt-5">
 
+<<<<<<< HEAD
         <a href="<?= base_url('reservas/pdf/'.$codigo) ?>"
            class="btn btn-danger">
 
             Baixar PDF
 
+=======
+        <a href="/ticket/download/<?= $reserva_id ?>" class="btn btn-sm btn-primary">
+
+            Baixar PDF
+            
+>>>>>>> c594659 (views finalizadas e csrf)
         </a>
 
         <a href="<?= base_url('dashboard') ?>"

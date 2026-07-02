@@ -8,6 +8,7 @@ use App\Models\MunicipioModel;
 
 class Clientes extends BaseController
 {
+
     protected $ClientesModel;
 
     public function __construct()
@@ -73,4 +74,5 @@ class Clientes extends BaseController
     return redirect()->to('/clientes/novo')
                      ->with('sucesso', 'Cliente removido com sucesso!');
 }
+
 }
