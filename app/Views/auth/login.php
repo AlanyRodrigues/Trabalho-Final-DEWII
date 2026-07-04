@@ -67,6 +67,8 @@
 
     <p class="text-center mb-1">
         <a href="#" data-bs-toggle="modal" data-bs-target="#forgotModal">
+
+        <a href="<?= base_url('forgot-password') ?>">
             Esqueci minha senha
         </a>
     </p>

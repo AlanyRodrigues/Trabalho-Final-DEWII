@@ -25,10 +25,7 @@ class Filters extends BaseFilters
      * or [filter_name => [classname1, classname2, ...]]
      */
     public array $aliases = [
-<<<<<<< HEAD
-=======
         'auth' => \App\Filters\AuthFilter::class,
->>>>>>> c594659 (views finalizadas e csrf)
         'csrf'          => CSRF::class,
         'toolbar'       => DebugToolbar::class,
         'honeypot'      => Honeypot::class,

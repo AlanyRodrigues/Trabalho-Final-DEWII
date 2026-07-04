@@ -16,10 +16,10 @@
 
             <?php
             $destinos = [
-                ['nome' => 'Rio de Janeiro', 'img' => 'rio.jpg'],
-                ['nome' => 'São Paulo', 'img' => 'sp.jpg'],
-                ['nome' => 'Salvador', 'img' => 'salvador.jpg'],
-                ['nome' => 'Brasília', 'img' => 'brasilia.jpg'],
+                ['nome' => 'Rio de Janeiro', 'img' => 'rio-de-janeiro.jpg'],
+                ['nome' => 'São Paulo', 'img' => 'sao-paulo.jpg'],
+                ['nome' => 'Salvador', 'img' => 'salvador.png'],
+                ['nome' => 'Brasília', 'img' => 'brasilia.png'],
             ];
             ?>
 
@@ -30,6 +30,8 @@
                     <div class="card border-0 shadow-sm h-100">
 
                         <img src="<?= base_url('img/' . $d['img']) ?>"
+
+                             alt="<?= esc($d['nome']) ?>"
                              class="card-img-top"
                              style="height:180px; object-fit:cover;">
 

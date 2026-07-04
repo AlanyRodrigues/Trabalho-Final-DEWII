@@ -66,23 +66,6 @@ class ReservaService
         ];
     }
 
-    public function calcularDuracao(
-        string $saida,
-        string $chegada
-    ): string
-    {
-        $inicio = new \DateTime($saida);
-
-        $fim = new \DateTime($chegada);
-
-        $intervalo = $inicio->diff($fim);
-
-        return sprintf(
-            '%dh %02dmin',
-            $intervalo->h,
-            $intervalo->i
-        );
-    }
 
     public function reservar(array $dados): int
     {
@@ -91,13 +74,6 @@ class ReservaService
         $dados['status'] = 'confirmado';
 
         return $this->reservaModel->insert($dados);
-    }
-
-    public function buscarPorCodigo(string $codigo): ?array
-    {
-        return $this->reservaModel
-            ->where('codigo_localizador', $codigo)
-            ->first();
     }
 
     public function listarPorUsuario(int $usuarioId): array
