@@ -38,9 +38,9 @@
 
     <h3 class="title">✈ Sistema de Passagens</h3>
 
-    <?php if(session()->getFlashdata('error')): ?>
-        <div class="alert alert-danger">
-            <?= session()->getFlashdata('error') ?>
+    <?php if(session()->getFlashdata('erro')): ?>
+        <div class="alert alert-danger text-center">
+            <?= session()->getFlashdata('erro') ?>
         </div>
     <?php endif; ?>
 
@@ -55,7 +55,7 @@
 
         <div class="mb-3">
             <label>Senha</label>
-            <input type="password" name="password" class="form-control" required>
+            <input type="password" name="senha" class="form-control" required>
         </div>
 
         <button type="submit" class="btn btn-primary w-100">

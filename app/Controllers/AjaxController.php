@@ -27,12 +27,14 @@ class AjaxController extends BaseController
         }
     }
 
-    public function destinosPorOrigem($origem)
+    public function destinosPorOrigem()
     {
         $this->validarAjax();
 
+        $origem = $this->request->getGet('origem');
+
         return $this->response->setJSON(
-            $this->vooService->listarDestinosPorOrigem(urldecode($origem))
+            $this->vooService->listarDestinosPorOrigem($origem)
         );
     }
 

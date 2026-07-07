@@ -1,0 +1,202 @@
+ERROR - 2026-07-06 13:25:11 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'sistema_passage...', 3306, '', 0)
+#1 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT...', Array, false)
+#4 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\app\Services\VooService.php(28): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\app\Controllers\Home.php(17): App\Services\VooService->listarOrigens()
+#8 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\CodeIgniter.php(933): App\Controllers\Home->index()
+#9 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT...', Array, false)
+#3 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\app\Services\VooService.php(28): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\app\Controllers\Home.php(17): App\Services\VooService->listarOrigens()
+#7 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\CodeIgniter.php(933): App\Controllers\Home->index()
+#8 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\rafae\Downloads\Trabalho-Final-DEWII-main (1fz)\Trabalho-Final-DEWII-main\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2026-07-06 13:25:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `origem`
+FROM `voos`
+ORDER BY `origem`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Services\VooService.php(28): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\Home.php(17): App\Services\VooService->listarOrigens()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-07-06 19:01:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+CRITICAL - 2026-07-06 22:56:36 --> CodeIgniter\Exceptions\ConfigException: Invalid DBDriver name: "MySQL"
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\Database.php on line 172.
+ 1 SYSTEMPATH\Database\Database.php(59): CodeIgniter\Database\Database->checkDbExtension('MySQL')
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(155): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Services\VooService.php(14): CodeIgniter\Model->__construct()
+ 5 APPPATH\Controllers\Home.php(13): App\Services\VooService->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-07-06 22:56:36 --> CodeIgniter\Exceptions\ConfigException: Invalid DBDriver name: "MySQL"
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\Database.php on line 172.
+ 1 SYSTEMPATH\Database\Database.php(59): CodeIgniter\Database\Database->checkDbExtension('MySQL')
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(155): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Services\VooService.php(14): CodeIgniter\Model->__construct()
+ 5 APPPATH\Controllers\Home.php(13): App\Services\VooService->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-07-06 22:56:37 --> CodeIgniter\Exceptions\ConfigException: Invalid DBDriver name: "MySQL"
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\Database.php on line 172.
+ 1 SYSTEMPATH\Database\Database.php(59): CodeIgniter\Database\Database->checkDbExtension('MySQL')
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(155): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Services\VooService.php(14): CodeIgniter\Model->__construct()
+ 5 APPPATH\Controllers\Home.php(13): App\Services\VooService->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-07-06 22:56:37 --> CodeIgniter\Exceptions\ConfigException: Invalid DBDriver name: "MySQL"
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\Database.php on line 172.
+ 1 SYSTEMPATH\Database\Database.php(59): CodeIgniter\Database\Database->checkDbExtension('MySQL')
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(155): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Services\VooService.php(14): CodeIgniter\Model->__construct()
+ 5 APPPATH\Controllers\Home.php(13): App\Services\VooService->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-07-06 22:56:38 --> CodeIgniter\Exceptions\ConfigException: Invalid DBDriver name: "MySQL"
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\Database.php on line 172.
+ 1 SYSTEMPATH\Database\Database.php(59): CodeIgniter\Database\Database->checkDbExtension('MySQL')
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(155): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Services\VooService.php(14): CodeIgniter\Model->__construct()
+ 5 APPPATH\Controllers\Home.php(13): App\Services\VooService->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-07-06 22:56:38 --> CodeIgniter\Exceptions\ConfigException: Invalid DBDriver name: "MySQL"
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\Database.php on line 172.
+ 1 SYSTEMPATH\Database\Database.php(59): CodeIgniter\Database\Database->checkDbExtension('MySQL')
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(155): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Services\VooService.php(14): CodeIgniter\Model->__construct()
+ 5 APPPATH\Controllers\Home.php(13): App\Services\VooService->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-07-06 22:56:38 --> CodeIgniter\Exceptions\ConfigException: Invalid DBDriver name: "MySQL"
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\Database.php on line 172.
+ 1 SYSTEMPATH\Database\Database.php(59): CodeIgniter\Database\Database->checkDbExtension('MySQL')
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(155): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Services\VooService.php(14): CodeIgniter\Model->__construct()
+ 5 APPPATH\Controllers\Home.php(13): App\Services\VooService->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-07-06 23:12:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+INFO - 2026-07-06 23:18:34 --> CSRF token verified.
+WARNING - 2026-07-06 23:18:34 --> [DEPRECATED] password_verify(): Passing null to parameter #1 ($password) of type string is deprecated in APPPATH\Controllers\Auth\Login.php on line 28.
+ 1 APPPATH\Controllers\Auth\Login.php(28): password_verify(Object(SensitiveParameterValue), 'senhaCriptografada123')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth\Login->autenticar()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-07-06 23:18:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-06 23:18:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+INFO - 2026-07-06 23:19:06 --> CSRF token verified.
+WARNING - 2026-07-06 23:19:06 --> [DEPRECATED] password_verify(): Passing null to parameter #1 ($password) of type string is deprecated in APPPATH\Controllers\Auth\Login.php on line 28.
+ 1 APPPATH\Controllers\Auth\Login.php(28): password_verify(Object(SensitiveParameterValue), 'mariana#987')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth\Login->autenticar()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-07-06 23:19:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-06 23:19:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+INFO - 2026-07-06 23:22:02 --> CSRF token verified.
+DEBUG - 2026-07-06 23:22:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-06 23:22:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-06 23:22:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+INFO - 2026-07-06 23:22:20 --> CSRF token verified.
+DEBUG - 2026-07-06 23:22:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-06 23:22:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-06 23:29:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-06 23:38:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+INFO - 2026-07-06 23:42:13 --> CSRF token verified.
+DEBUG - 2026-07-06 23:42:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-06 23:42:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+INFO - 2026-07-06 23:42:34 --> CSRF token verified.
+DEBUG - 2026-07-06 23:42:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-06 23:42:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+INFO - 2026-07-06 23:43:17 --> CSRF token verified.
+DEBUG - 2026-07-06 23:43:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-06 23:43:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-06 23:47:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-06 23:47:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+INFO - 2026-07-06 23:47:23 --> CSRF token verified.
+DEBUG - 2026-07-06 23:47:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-06 23:47:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-06 23:47:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-06 23:48:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-06 23:56:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+INFO - 2026-07-06 23:56:26 --> CSRF token verified.
+DEBUG - 2026-07-06 23:56:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.

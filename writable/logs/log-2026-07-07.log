@@ -1,0 +1,146 @@
+DEBUG - 2026-07-07 00:00:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-07 00:00:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+INFO - 2026-07-07 00:01:04 --> CSRF token verified.
+DEBUG - 2026-07-07 00:01:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-07 00:01:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-07 00:01:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-07 00:10:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+INFO - 2026-07-07 00:11:09 --> CSRF token verified.
+DEBUG - 2026-07-07 00:11:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-07 00:11:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-07 00:11:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+INFO - 2026-07-07 00:12:20 --> CSRF token verified.
+DEBUG - 2026-07-07 00:12:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-07 00:12:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-07 00:12:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-07 00:13:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+INFO - 2026-07-07 00:13:57 --> CSRF token verified.
+DEBUG - 2026-07-07 00:13:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+DEBUG - 2026-07-07 00:13:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\ArrayHandler' driver.
+CRITICAL - 2026-07-07 00:21:16 --> InvalidArgumentException: Invalid session handler "FileHandler" provided.
+[Method: GET, Route: dashboard]
+in SYSTEMPATH\Config\Services.php on line 695.
+ 1 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+ 2 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+ 3 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+ 4 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::session()
+ 5 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('session', [])
+ 6 SYSTEMPATH\Common.php(1027): CodeIgniter\Config\BaseService::get('session')
+ 7 SYSTEMPATH\Common.php(1000): service('session')
+ 8 APPPATH\Controllers\Dashboard.php(13): session()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-07-07 00:27:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-07-07 00:28:01 --> CSRF token verified.
+DEBUG - 2026-07-07 00:28:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 00:28:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 00:28:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 00:36:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 00:36:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-07-07 00:36:48 --> CSRF token verified.
+DEBUG - 2026-07-07 00:36:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 00:36:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 00:36:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 00:46:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 00:46:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 00:46:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 00:47:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 00:47:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 00:47:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 01:06:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 01:06:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 01:06:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 01:06:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 01:07:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 01:07:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-07-07 01:07:12 --> CSRF token verified.
+DEBUG - 2026-07-07 01:07:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 01:07:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 01:07:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-07-07 01:16:01 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "Rio de Janeiro (SDU)"
+[Method: GET, Route: ajax/destinos-por-origem/Rio%20de%20Janeiro%20%28SDU%29]
+in SYSTEMPATH\Router\Router.php on line 741.
+ 1 SYSTEMPATH\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('ajax/destinos-por-origem/Rio de Janeiro (SDU)')
+ 2 SYSTEMPATH\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('ajax/destinos-por-origem/Rio de Janeiro (SDU)')
+ 3 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-07-07 01:16:12 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "Brasília (BSB)"
+[Method: GET, Route: ajax/destinos-por-origem/Bras%C3%ADlia%20%28BSB%29]
+in SYSTEMPATH\Router\Router.php on line 741.
+ 1 SYSTEMPATH\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('ajax/destinos-por-origem/Brasília (BSB)')
+ 2 SYSTEMPATH\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('ajax/destinos-por-origem/Brasília (BSB)')
+ 3 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-07-07 01:17:41 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "Brasília (BSB)"
+[Method: GET, Route: ajax/destinos-por-origem/Bras%C3%ADlia%20%28BSB%29]
+in SYSTEMPATH\Router\Router.php on line 741.
+ 1 SYSTEMPATH\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('ajax/destinos-por-origem/Brasília (BSB)')
+ 2 SYSTEMPATH\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('ajax/destinos-por-origem/Brasília (BSB)')
+ 3 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-07-07 01:26:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 01:26:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 01:26:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 01:26:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-07-07 01:54:50 --> Error: Call to undefined method App\Services\VooService::listarDestinosPorOrigem()
+[Method: GET, Route: ajax/destinos-por-origem]
+in APPPATH\Controllers\AjaxController.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AjaxController->destinosPorOrigem()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AjaxController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-07-07 02:15:48 --> Error: Call to undefined method App\Services\VooService::listarDestinosPorOrigem()
+[Method: GET, Route: ajax/destinos-por-origem]
+in APPPATH\Controllers\AjaxController.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AjaxController->destinosPorOrigem()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AjaxController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-07-07 02:15:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 02:15:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-07-07 02:16:03 --> Error: Call to undefined method App\Services\VooService::listarDestinosPorOrigem()
+[Method: GET, Route: ajax/destinos-por-origem]
+in APPPATH\Controllers\AjaxController.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AjaxController->destinosPorOrigem()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AjaxController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-07-07 02:17:23 --> Error: Call to undefined method App\Services\VooService::listarDestinosPorOrigem()
+[Method: GET, Route: ajax/destinos-por-origem]
+in APPPATH\Controllers\AjaxController.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AjaxController->destinosPorOrigem()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AjaxController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-07-07 02:17:49 --> Error: Call to undefined method App\Services\VooService::listarDestinosPorOrigem()
+[Method: GET, Route: ajax/destinos-por-origem]
+in APPPATH\Controllers\AjaxController.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AjaxController->destinosPorOrigem()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AjaxController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-07-07 02:26:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-07 02:26:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

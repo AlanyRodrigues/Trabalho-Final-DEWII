@@ -39,19 +39,18 @@
             <div class="card p-3 shadow-sm">
                 <h5>✈ Ações rápidas</h5>
 
-                <a href="/flights" class="btn btn-primary mt-2">
+                <a href="/" class="btn btn-primary mt-2">
                     Buscar voos
                 </a>
 
-                <a href="/reservations" class="btn btn-outline-primary mt-2">
-                    Minhas passagens
+                <a href="#tabela-reservas" class="btn btn-outline-primary mt-2">                    Minhas passagens
                 </a>
             </div>
         </div>
 
     </div>
 
-    <div class="mt-4">
+    <div id="tabela-reservas" class="mt-4">
         <div class="card p-3 shadow-sm">
             <h5>📄 Últimas reservas</h5>
 

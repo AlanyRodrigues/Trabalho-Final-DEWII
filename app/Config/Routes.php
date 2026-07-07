@@ -9,21 +9,40 @@ use CodeIgniter\Router\RouteCollection;
 // --------------------------------------------------------------------
 // ROTA PRINCIPAL (TELA INICIAL)
 // --------------------------------------------------------------------
-// Abre o formulário de cadastro direto na raiz do projeto
 $routes->get('/', 'Home::index');
 
+// Dashboard
+$routes->get('dashboard', 'Dashboard::index');
+
+// Passagens
+$routes->get('passagens/detalhes/(:num)', 'Passagens::detalhes/$1');
+
+// Ajax API
+$routes->get('ajax/destinos-por-origem', 'AjaxController::destinosPorOrigem');$routes->get('ajax/buscar-voos', 'AjaxController::buscarVoos');
+$routes->get('ajax/assentos/(:num)', 'AjaxController::assentos/$1');
+$routes->get('ajax/verificar-assento/(:num)', 'AjaxController::verificarAssento/$1');
+$routes->get('ajax/passageiros', 'AjaxController::passageiros');
+
+// Telas ADM
+$routes->get('perfil', 'Perfil::index');
+$routes->get('usuarios', 'Usuarios::index');
+
+// ROTAS DE AUTENTICAÇÃO
 // --------------------------------------------------------------------
-// ROTAS DE CLIENTES
-// --------------------------------------------------------------------
-$routes->get('clientes', 'Clientes::index');          // Listagem de clientes (futuro)
-$routes->get('clientes/novo', 'Clientes::create');     // Abrir formulário via Controller Clientes
-$routes->post('clientes/cadastro', 'Clientes::cadastro'); // Processar salvamento no Banco
-$routes->get('clientes/edit/(:num)', 'Clientes::edit/$1'); // Abrir edição de cliente
-$routes->post('clientes/update/(:num)', 'Clientes::update/$1'); // Processar atualização
-$routes->post('clientes/delete/(:num)', 'Clientes::delete/$1'); // Deletar cliente
+$routes->get('login', '\App\Controllers\Auth\Login::index');
+$routes->post('auth/login', '\App\Controllers\Auth\Login::autenticar');
+$routes->get('logout', '\App\Controllers\Auth\Login::logout');
 
 // --------------------------------------------------------------------
-// ROTA DO AJAX (CARREGAMENTO DINÂMICO DE CIDADES)
+// ROTAS ANTIGAS DESATIVADAS
 // --------------------------------------------------------------------
-// Rota que o JavaScript vai chamar para popular o select de cidades
+/*
+$routes->get('clientes', 'Clientes::index');
+$routes->get('clientes/novo', 'Clientes::create');
+$routes->post('clientes/cadastro', 'Clientes::cadastro');
+$routes->get('clientes/edit/(:num)', 'Clientes::edit/$1');
+$routes->post('clientes/update/(:num)', 'Clientes::update/$1');
+$routes->post('clientes/delete/(:num)', 'Clientes::delete/$1');
+ 
 $routes->get('municipios/estado/(:num)', 'Municipios::getByEstado/$1');
+*/
